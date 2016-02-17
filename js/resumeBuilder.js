@@ -9,19 +9,32 @@ var education = {
             "location": "Flagstaff, AZ",
             "degree": "",
             "majors": ["Computer Science Engineering"],
-            "date": "1983-1985"
+            "dates": "1983-1985",
+            "url": "https://www.nau.edu/"
         },
             {"name": "UA",
             "city": "Tucson",
             "state": "Arizona",
-            "major": "Systems Engineering"
+            "major": "Systems Engineering",
+             "dates": "1981-1983",
+            "url": "http://www.arizona.edu/"
         },
          {"name": "UTA",
             "city": "Arlington",
             "state": "TX",
-            "major": "Computer Engineering"
+            "major": "Computer Engineering",
+           "dates": "1992-1994",
+            "url": "http://www.arizona.edu/"
          }
+    ],
+    "online courses": [
+        {"title": "Google Analytics IQ",
+         "school": "Google Academy",
+         "dates": "2013 - 2014",
+         "url": "https://analyticsacademy.withgoogle.com/course01"
+        }
     ]
+    
 };
     
 
