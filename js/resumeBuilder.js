@@ -2,7 +2,22 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
-
+var work = {
+    "jobs": [
+        {   "employer": "Southern Company",
+            "title": "Systems Analyst",
+            "locatiion": "Atlanta, GA",
+            "dates": "2011-2013",
+            "description": "Web Analytics for various websites"
+        },
+        {   "employer": "Coca-Cola Enterprises",
+            "title": "Systems Administrator",
+            "locatiion": "Atlanta, GA",
+            "dates": "2001-2011",
+            "description": "IIS Web Admin"
+        }
+    ]
+};
 var education = {
     "schools": [
         {   "name": "NAU",
