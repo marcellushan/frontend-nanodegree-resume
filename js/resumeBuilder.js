@@ -15,9 +15,40 @@ var work = {
             "locatiion": "Atlanta, GA",
             "dates": "2001-2011",
             "description": "IIS Web Admin"
+        },
+        {   "employer": "Georgia Highlands College",
+            "title": "Webmaster",
+            "locatiion": "Rome, GA",
+            "dates": "2015-2016",
+            "description": "LAMP Web Developer"
         }
     ]
 };
+
+var bio = {
+    "name": "Marc Hannah",
+    "role": "Web Developer",
+    "welcomeMessage": "Welcome to MarcJHannah.com",
+    "contacts": {
+                    "mobile": "404-832-0748",
+                    "email": "marcjhannah@gmail.com",
+                    "github":"marcjhannah",
+                    "twitter": "@marcjhannah",
+                    "location" :"Rome, GA"
+    },
+    "skills": ["PHP","javascript","jQuery","mySQL","HTML","CSS"]
+};
+
+var projects = {
+    "project": [
+        {   "title": "Collaboration Cutover",
+            "dates": "2010-2011",
+            "description": "Decouple the collaboration infrastructure",
+            "images": ["marc.jpg","toni.jpg"]
+        }
+    ]
+};
+
 var education = {
     "schools": [
         {   "name": "NAU",
@@ -56,9 +87,3 @@ var education = {
 
 //console.log(contactInfo);
 
-        
-                }
-    }
-    "cities": ["Flagstaff", "Dallas", "Tucson"],
-    "schools": ["NAU", "UTA"],
-    "graduation year": "2008"
