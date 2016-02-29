@@ -6,19 +6,19 @@ var work = {
     "jobs": [
         {   "employer": "Southern Company",
             "title": "Systems Analyst",
-            "locatiion": "Atlanta, GA",
+            "location": "Atlanta, GA",
             "dates": "2011-2013",
             "description": "Web Analytics for various websites"
         },
         {   "employer": "Coca-Cola Enterprises",
             "title": "Systems Administrator",
-            "locatiion": "Atlanta, GA",
+            "location": "Atlanta, GA",
             "dates": "2001-2011",
             "description": "IIS Web Admin"
         },
         {   "employer": "Georgia Highlands College",
             "title": "Webmaster",
-            "locatiion": "Rome, GA",
+            "location": "Rome, GA",
             "dates": "2015-2016",
             "description": "LAMP Web Developer"
         }
@@ -82,8 +82,36 @@ var education = {
     ]
     
 };
-    
 
+var mySkills = bio.skills;
+if(mySkills.length)
+    {
+     $("#header").append(HTMLskillsStart);
+        for(skill in bio.skills)
+            {
+                var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+                $("#skills").append(formattedSkill);
+            }
+    }
+function displayWork()
+    {
+    var myJobs = work.jobs;
+    for(job in myJobs)
+        {
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%",myJobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%",myJobs[job].title);
+        var formattedDates = HTMLworkDates.replace("%data%",myJobs[job].dates);
+        var formattedLocation = HTMLworkLocation.replace("%data%", myJobs[job].location);
+        var formattedDescription = HTMLworkDescription.replace("%data%",myJobs[job].description);
+        $(".work-entry:last").append(formattedEmployer + formattedTitle);
+        $(".work-entry:last").append(formattedDates);
+        $(".work-entry:last").append(formattedLocation);
+        $(".work-entry:last").append(formattedDescription);
+
+        };
+    };
+displayWork();
 
 //console.log(contactInfo);
 
