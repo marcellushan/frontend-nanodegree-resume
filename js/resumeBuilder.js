@@ -16,7 +16,7 @@ var bio = {
     },
     "welcomeMessage": "Welcome to MarcJHannah.com",
     "skills": ["PHP","javascript","jQuery","mySQL","HTML","CSS"],
-    "biopic": "images/marc.jpg"
+    "biopic": "images/marc2.jpg"
 };
 
 var work = {
@@ -64,15 +64,13 @@ var education = {
             "url": "https://www.nau.edu/"
         },
             {"name": "UA",
-            "city": "Tucson",
-            "state": "Arizona",
+            "location": "Tucson, AZ",
             "major": ["Systems Engineering"],
              "dates": "1981-1983",
             "url": "http://www.arizona.edu/"
         },
          {"name": "UTA",
-            "city": "Arlington",
-            "state": "TX",
+            "location": "Arlington, TX",
             "major": ["Computer Engineering"],
            "dates": "1992-1994",
             "url": "http://www.arizona.edu/"
@@ -93,18 +91,6 @@ var education = {
     
 };
 
-//console.log("test");
-
-/*var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedName);
-$(document).click(function(loc) {
-    var x = loc.pageX;
-    var y = loc.pageY;
-    logClicks= (x,y);
-    console.log("y" + y + "x"+ x);
-    
-});
-*/
 
 function locationizer(work_obj) {
       var locationArray = [];
@@ -118,7 +104,6 @@ function locationizer(work_obj) {
 
 }
 
-//console.log(projects.project[0].title);
 bio.display = function(){
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -138,6 +123,11 @@ var formattedSkills = HTMLskills.replace("%data%", bio.skills);
     $("#topContacts").append(formattedGithub);
     $("#topContacts").append(formattedEmail);
     $("#topContacts").append(formattedMobile);
+     $("#footerContacts").append(formattedLocation);
+    $("#footerContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedMobile);
     
     $("#header").append(formattedBioPic); 
     $("#header").append(HTMLskillsStart); 
@@ -158,7 +148,7 @@ if(mySkills.length)
 }
 bio.display();
 
-function displayWork()
+work.display =function ()
     {
     var myJobs = work.jobs;
     for(job in myJobs)
@@ -177,9 +167,9 @@ function displayWork()
         };
     };
 
-displayWork();
+work.display();
 
-function displayProjects()
+projects.display =function ()
     {
     var myProjects = projects.projects;
     for(project in myProjects)
@@ -200,9 +190,9 @@ function displayProjects()
             };
             };
     };
-displayProjects();
+projects.display();
 
-function displayEducation() {
+education.display =function () {
     var mySchools=education.schools;
         for(school in mySchools){
             $("#education").append(HTMLschoolStart);
@@ -212,6 +202,8 @@ function displayEducation() {
              $("#education").append(formattedDates);
             var formattedMajors = HTMLschoolMajor.replace("%data%",mySchools[school].major);
              $("#education").append(formattedMajors);
+            var formattedLocation = HTMLschoolLocation.replace("%data%",mySchools[school].location);
+             $("#education").append(formattedLocation);
             var myMajors = mySchools[school].majors
             for(major in myMajors)
                 {
@@ -224,11 +216,16 @@ function displayEducation() {
         for(online in myOnline) {
             var formattedTitle = HTMLonlineTitle.replace("%data%",myOnline[online].title);
              $("#education").append(formattedTitle);
-                            var formattedOnlineDates = HTMLonlineDates.replace("%data%",myOnline[online].dates);
-             $("#education").append(formattedOnlineDates);
+/*               var formattedOnlineDates = HTMLonlineDates.replace("%data%",myOnline[online].dates);
+             $("#education").append(formattedOnlineDates);*/
             var formattedSchool = HTMLonlineSchool.replace("%data%",myOnline[online].school);
              $("#education").append(formattedSchool);
 
+            console.log(HTMLonlineTitle);
+
+
         }
 };
-displayEducation();
+education.display();
+
+$("#mapDiv").append(googleMap);
